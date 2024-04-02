@@ -46,21 +46,23 @@
             cursor: pointer;
             margin-left: 95px;
         }
-        .inc-btn{
-            margin: 20px  auto;
+
+        .inc-btn {
+            margin: 20px auto;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        .btn-img{
+
+        .btn-img {
             height: 35px;
         }
-        .quantity-text{
+
+        .quantity-text {
             font-size: 30px;
             font-weight: bold;
             margin: 0 20px;
         }
-
     </style>
 </head>
 
@@ -72,14 +74,47 @@
             <h1 class="product-name">Dodge Challenger- Demon SRT</h1>
             <p class="product-info">Dodge Challenger-Demon SRT is the love of car enthusiast.</p>
             <p class="price">₹.1.2 Cr</p>
+
+            <p class="show-quantity">1 x 1.2Cr</p>
+            <p class="show-total">Total:1.2cr</p>
         </div>
+
+
         <div class="inc-btn">
-            <img src="minus.png" alt="minus sign" class="btn-img">
-            <span class="quantity-text">1</span>
-            <img src="plus.png" alt="minus sign" class="btn-img">
+            <img src="minus.png" alt="minus sign" class="btn-img" onclick="dec()" />
+            <span class="quantity-text" id="quantity-text">1</span>
+            <img src="plus.png" alt="minus sign" class="btn-img" onclick="inc()" />
         </div>
-        <button class="btn" >Buy Now!!</button>
+        <button class="btn">Buy Now!!</button>
     </div>
+
+    <script>
+        function inc() {
+            const quantityText = document.getElementById("quantity-text");
+            const showQuantity = document.getElementById("show-quantity");
+            const showTotal = document.getElementById("show-total");
+
+            let quantity = parseInt(quantityText.innerHTML);
+            if (quantity < 5) {
+                quantityText.innerHTML = ++quantity;
+            }
+            else {
+                alert("Ruk Bhai! Isme Tera Ghar chala Jayenga");
+            }
+            showQuantity.innerTexts = `${quantity} x 1.2 Cr`;
+        }
+        function dec() {
+            const quantityText = document.getElementById("quantity-text");
+            let quantity = parseInt(quantityText.innerHTML);
+            if (quantity > 1) {
+                quantityText.innerHTML = --quantity;
+            }
+            else {
+                alert("You can't add less than 1 item")
+            }
+
+        }
+    </script>
 </body>
 
 </html>
