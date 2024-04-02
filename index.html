@@ -1,37 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>product-card</title>
     <style>
-        body{
+        body {
             background-color: #f2f2f2;
         }
-        .product-card{
+
+        .product-card {
             background-color: #fff;
             width: 350px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             border-radius: 40px;
             margin: 0 auto;
-            padding: 10px ;
+            padding: 10px;
         }
-        .product-img{
+
+        .product-img {
             height: 200px;
             border-radius: 40px;
             display: block;
             margin: 0 auto;
-            background-image: radial-gradient( circle 311px at 8.6% 27.9%,  rgba(62,147,252,0.57) 12.9%, rgba(239,183,192,0.44) 91.2% );
+            background-image: radial-gradient(circle 311px at 8.6% 27.9%, rgba(62, 147, 252, 0.57) 12.9%, rgba(239, 183, 192, 0.44) 91.2%);
         }
+
+        .product-disc {
+            margin-left: 20px;
+        }
+
+        .price {
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        .btn {
+            border: none;
+            border-radius: 40px;
+            background-image: radial-gradient(circle 311px at 8.6% 27.9%, rgba(62, 147, 252, 0.57) 12.9%, rgba(239, 183, 192, 0.44) 91.2%);
+            font-size: 20px;
+            padding: 10px 30px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-left: 95px;
+        }
+        .inc-btn{
+            margin: 20px  auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .btn-img{
+            height: 35px;
+        }
+        .quantity-text{
+            font-size: 30px;
+            font-weight: bold;
+            margin: 0 20px;
+        }
+
     </style>
 </head>
+
 <body>
     <div class="product-card">
         <img src="dodge.png" alt="Dodge challenger srt" class="product-img">
 
         <div class="product-disc">
-            <h1 class="product-name">Dodge Challenger Demon SRT</h1>
+            <h1 class="product-name">Dodge Challenger- Demon SRT</h1>
+            <p class="product-info">Dodge Challenger-Demon SRT is the love of car enthusiast.</p>
+            <p class="price">₹.1.2 Cr</p>
         </div>
+        <div class="inc-btn">
+            <img src="minus.png" alt="minus sign" class="btn-img">
+            <span class="quantity-text">1</span>
+            <img src="plus.png" alt="minus sign" class="btn-img">
+        </div>
+        <button class="btn" >Buy Now!!</button>
     </div>
 </body>
+
 </html>
