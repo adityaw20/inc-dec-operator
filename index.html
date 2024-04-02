@@ -48,7 +48,7 @@
         }
 
         .inc-btn {
-            margin: 20px auto;
+            margin: 10px auto;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -56,12 +56,16 @@
 
         .btn-img {
             height: 35px;
+            cursor: pointer;
         }
 
         .quantity-text {
             font-size: 30px;
             font-weight: bold;
             margin: 0 20px;
+        }
+        .quantity-total{
+            font-size: 20px;
         }
     </style>
 </head>
@@ -75,8 +79,8 @@
             <p class="product-info">Dodge Challenger-Demon SRT is the love of car enthusiast.</p>
             <p class="price">₹.1.2 Cr</p>
 
-            <p class="show-quantity">1 x 1.2Cr</p>
-            <p class="show-total">Total:1.2cr</p>
+            <p id="show-quantity" class="quantity-total">1 x 1.2 Cr</p>
+            <p id="show-total" class="quantity-total">Total:1.2 Cr</p>
         </div>
 
 
@@ -101,10 +105,15 @@
             else {
                 alert("Ruk Bhai! Isme Tera Ghar chala Jayenga");
             }
-            showQuantity.innerTexts = `${quantity} x 1.2 Cr`;
+            showQuantity.innerText = `${quantity} x 1.2 Cr`;
+            showTotal.innerText=`Total: ${quantity * 1.2} Cr`
         }
+
         function dec() {
             const quantityText = document.getElementById("quantity-text");
+            const showQuantity = document.getElementById("show-quantity");
+            const showTotal = document.getElementById("show-total");
+
             let quantity = parseInt(quantityText.innerHTML);
             if (quantity > 1) {
                 quantityText.innerHTML = --quantity;
@@ -112,6 +121,8 @@
             else {
                 alert("You can't add less than 1 item")
             }
+            showQuantity.innerText = `${quantity} x 1.2`;
+            showTotal.innerText=`Total: ${quantity * 1.2} Cr`
 
         }
     </script>
